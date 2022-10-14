@@ -16,6 +16,7 @@ otroContador()      // 2 */
 function counter() {  
 
   var conteo = 0;
+
   return function() {
     return conteo += 1;
   }     
@@ -48,7 +49,7 @@ a invocar a cb, porque el resultado estará guardado en la "memoria caché".
 
 function cacheFunction(cb) {
 
-  let obj = {};
+  let obj = {}; //caché
 
   return function(arg) {           //Esta función debe aceptar un argumento (arg) e invocar a cb con ese argumento
                                   
@@ -99,12 +100,17 @@ let getNombreAlumno = getNombre.bind(alumno);
 */
 
 function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
-  return this.delimitadorIzquierda + this.cadena + this.delimitadorDerecha;
+ 
+  return delimitadorIzquierda + cadena + delimitadorDerecha;
+ 
 }
 
-let textoAsteriscos = crearCadena.bind();   //retornen una cadena (string) y el delimitador especificado
-let textoGuiones = crearCadena.bind();
-let textoUnderscore = crearCadena.bind();
+let textoAsteriscos = crearCadena.bind(this, '*', '*');   
+let textoGuiones = crearCadena.bind(this, '-', '-');
+let textoUnderscore = crearCadena.bind(this, '_', '_');
+
+
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
