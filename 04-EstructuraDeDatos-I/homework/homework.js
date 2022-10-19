@@ -49,6 +49,12 @@ Queue.prototype.size = function() {
 }
 
 let nuevaCola = new Queue();
+nuevaCola.enqueue(45);
+nuevaCola.enqueue(23)
+nuevaCola.dequeue()
+nuevaCola.size()
+nuevaCola
+console.log(nuevaCola.size())
 
 
 // No modifiquen nada debajo de esta linea
